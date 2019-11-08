@@ -1,29 +1,23 @@
 package com.example.vegeken;
 
+import android.graphics.SurfaceTexture;
 import android.os.Bundle;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 
-import android.view.View;
-
-import androidx.navigation.NavController;
-import androidx.navigation.Navigation;
-import androidx.navigation.ui.AppBarConfiguration;
-import androidx.navigation.ui.NavigationUI;
-
-import com.google.android.material.navigation.NavigationView;
-
-import androidx.drawerlayout.widget.DrawerLayout;
-
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
-import android.view.Menu;
+import android.util.Log;
+import android.view.View;
+import android.widget.Toast;
+import android.hardware.Camera;
+
+import java.io.IOException;
 
 public class SOSActivity extends AppCompatActivity {
-
-    private AppBarConfiguration mAppBarConfiguration;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +25,10 @@ public class SOSActivity extends AppCompatActivity {
         setContentView(R.layout.activity_sos);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        ActionBar ab = getSupportActionBar();
+        ab.setDisplayHomeAsUpEnabled(true);
+
         FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -39,31 +37,46 @@ public class SOSActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
-        DrawerLayout drawer = findViewById(R.id.drawer_layout);
-        NavigationView navigationView = findViewById(R.id.nav_view);
-        // Passing each menu ID as a set of Ids because each
-        // menu should be considered as top level destinations.
-        mAppBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.nav_home, R.id.nav_gallery, R.id.nav_slideshow,
-                R.id.nav_tools, R.id.nav_share, R.id.nav_send)
-                .setDrawerLayout(drawer)
-                .build();
-        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
-        NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
-        NavigationUI.setupWithNavController(navigationView, navController);
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.so, menu);
-        return true;
+    public void startAlarm(View view){
+//        for(int i=0; i<100; i++){
+//            flashOn();
+//            try{
+//                Thread.currentThread().sleep(500);
+//            } catch (Exception e){}
+//            flashOff();
+//            try{
+//                Thread.currentThread().sleep(500);
+//            } catch (Exception e){}
+//        }
+//        Camera camera;
+//        camera=Camera.open();
+//        Camera.Parameters parameters=camera.getParameters();
+//        try {
+//            camera.setPreviewTexture(new SurfaceTexture(0));
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
+//        parameters.setFlashMode(Camera.Parameters.FLASH_MODE_TORCH);
+//        camera.setParameters(parameters);
+//        camera.startPreview();
     }
 
-    @Override
-    public boolean onSupportNavigateUp() {
-        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
-        return NavigationUI.navigateUp(navController, mAppBarConfiguration)
-                || super.onSupportNavigateUp();
+    public void flashOn(){
+
+
+
     }
+
+//    public void flashOff(){
+//        try{
+//            Camera.Parameters mParameters;
+//            mParameters = camera.getParameters();
+//            mParameters.setFlashMode(Camera.Parameters.FLASH_MODE_OFF);
+//            camera.setParameters(mParameters);
+//            camera.release();
+//        } catch(Exception ex){}
+//
+//    }
 }
