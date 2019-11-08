@@ -13,6 +13,7 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
+import com.example.vegeken.MapsActivity;
 import com.example.vegeken.R;
 import com.example.vegeken.SOSActivity;
 import com.example.vegeken.ui.send.SendFragment;
@@ -25,6 +26,7 @@ public class HomeFragment extends Fragment {
 
     private HomeViewModel homeViewModel;
     private ImageButton sos_button = null;
+    private ImageButton map_button = null;
 
     public class sos_OnClickListener implements View.OnClickListener {
         public void onClick(View view){
@@ -34,6 +36,16 @@ public class HomeFragment extends Fragment {
     public void OpenSOSActivity(){
 //        Intent intent = new Intent(HomeFragment.this.getActivity(),SOSActivity.class);
         Intent intent = new Intent(HomeFragment.this.getActivity(), SOSActivity.class);
+        startActivity(intent);
+    }
+
+    public class map_OnClickLisetener implements View.OnClickListener {
+        public void onClick(View view){
+            OpenMapActivity();
+        }
+    }
+    public void OpenMapActivity(){
+        Intent intent = new Intent(HomeFragment.this.getActivity(), MapsActivity.class);
         startActivity(intent);
     }
 
@@ -55,6 +67,8 @@ public class HomeFragment extends Fragment {
 //        View view = inflater.inflate(R.layout.fragment_home,null);
         sos_button = (ImageButton) root.findViewById(R.id.imageButton2);
         sos_button.setOnClickListener(new sos_OnClickListener());
+        map_button = (ImageButton) root.findViewById(R.id.imageButton3);
+        map_button.setOnClickListener(new map_OnClickLisetener());
         return root;
     }
 }
