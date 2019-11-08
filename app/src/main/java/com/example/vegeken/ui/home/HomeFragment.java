@@ -1,5 +1,6 @@
 package com.example.vegeken.ui.home;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,10 +14,30 @@ import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
 import com.example.vegeken.R;
+import com.example.vegeken.SOSActivity;
+import com.example.vegeken.ui.send.SendFragment;
+
+import android.widget.ImageButton;
+
+import androidx.drawerlayout.widget.DrawerLayout;
 
 public class HomeFragment extends Fragment {
 
     private HomeViewModel homeViewModel;
+    private ImageButton sos_button = null;
+
+    public class sos_OnClickListener implements View.OnClickListener {
+        public void onClick(View view){
+            OpenSOSActivity();
+        }
+    }
+    public void OpenSOSActivity(){
+//        Intent intent = new Intent(HomeFragment.this.getActivity(),SOSActivity.class);
+        Intent intent = new Intent(HomeFragment.this.getActivity(), SOSActivity.class);
+        startActivity(intent);
+    }
+
+
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -30,6 +51,10 @@ public class HomeFragment extends Fragment {
 //                textView.setText(s);
 //            }
 //        });
+//        setContentView(R.layout.fragment_home);
+//        View view = inflater.inflate(R.layout.fragment_home,null);
+        sos_button = (ImageButton) root.findViewById(R.id.imageButton2);
+        sos_button.setOnClickListener(new sos_OnClickListener());
         return root;
     }
 }
