@@ -5,21 +5,15 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
-import androidx.annotation.Nullable;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
 import com.example.vegeken.R;
 import com.example.vegeken.SOSActivity;
-import com.example.vegeken.ui.send.SendFragment;
 
 import android.widget.ImageButton;
-
-import androidx.drawerlayout.widget.DrawerLayout;
 
 public class HomeFragment extends Fragment {
 

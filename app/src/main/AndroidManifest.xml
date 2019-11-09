@@ -10,9 +10,14 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
+            android:name=".FakeTipActivity"
+            android:label="@string/title_activity_fake_tip"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity
             android:name=".SOSActivity"
             android:label="@string/title_activity_sos"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name"
