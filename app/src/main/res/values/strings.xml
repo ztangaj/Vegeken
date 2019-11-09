@@ -23,7 +23,7 @@
     <string name="tips_heart">the pills are in the left pocket of my coat</string>
     <string name="title_activity_fake_tip">New Tip</string>
     <string name="title_activity_maps">Map</string>
-
+    <string name="title_activity_info">Info</string>
 	<string name="title_activity_hospital_choosing">Hospital Choosing</string>
 
 </resources>
