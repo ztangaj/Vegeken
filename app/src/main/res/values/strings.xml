@@ -10,9 +10,9 @@
     <string name="menu_home">Name: Mark</string>
     <string name="menu_gallery">Age: 23</string>
     <string name="menu_slideshow">Gender: Male</string>
-    <string name="menu_tools">Address</string>
+    <string name="menu_tools">History</string>
     <string name="menu_share">Emergency Contact</string>
-    <string name="menu_send">History</string>
+    <string name="menu_send">Address</string>
 
     <string name="title_activity_sos">SOS</string>
     <string name="title_activity_tip">New Tip</string>
