@@ -13,9 +13,17 @@
     <string name="menu_tools">Tools</string>
     <string name="menu_share">Share</string>
     <string name="menu_send">Send</string>
-    <string name="title_activity_sos">SOSActivity</string>
+
+    <string name="title_activity_sos">SOS</string>
+    <string name="title_activity_tip">New Tip</string>
+    <string name="tips_cpr">Compressions: Restore blood circulation\nAirway: Open the airway\nBreathing: Breathe for the person</string>
+    <string name="tips_heat">Cool the entire body by sponging or spraying cold water, and fan the person to help lower the body temperature.</string>
+    <string name="tips_choke">Stand behind the person.\nMake a fist with one hand.\nGrasp the fist with the other hand.\nPerform between six and 10 abdominal thrusts</string>
+    <string name="tips_burn">cool the burn with cool or lukewarm running water for 20 minutes\nremove any clothing or jewellery that\'s near the burnt area of skin\nmake sure the person keeps warm</string>
+    <string name="tips_heart">the pills are in the left pocket of my coat</string>
+    <string name="title_activity_fake_tip">New Tip</string>
     <string name="title_activity_maps">Map</string>
-    
-    <string name="title_activity_hospital_choosing">Hospital Choosing</string>
-    
+
+	<string name="title_activity_hospital_choosing">Hospital Choosing</string>
+
 </resources>
