@@ -45,12 +45,12 @@
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_height="match_parent"
-                android:text="自动筛选"/>
+                android:text="自動篩選"/>
             <Button
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_height="match_parent"
-                android:text="等待时间"
+                android:text="等待時間"
                 android:drawableRight="@drawable/arror"
                 />
             <Button
@@ -64,7 +64,7 @@
                 android:layout_weight="1"
                 android:layout_height="match_parent"
                 android:drawableRight="@drawable/arror"
-                android:text="价格"/>
+                android:text="價格"/>
 
             <Button
                 android:layout_width="0dp"
