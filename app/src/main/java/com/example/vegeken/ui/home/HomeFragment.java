@@ -10,6 +10,7 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProviders;
 
+import com.example.vegeken.HospitalChoosing;
 import com.example.vegeken.MapsActivity;
 import com.example.vegeken.R;
 import com.example.vegeken.SOSActivity;
@@ -21,6 +22,7 @@ public class HomeFragment extends Fragment {
     private HomeViewModel homeViewModel;
     private ImageButton sos_button = null;
     private ImageButton map_button = null;
+    private ImageButton hc_button = null;
 
     public class sos_OnClickListener implements View.OnClickListener {
         public void onClick(View view){
@@ -33,7 +35,7 @@ public class HomeFragment extends Fragment {
         startActivity(intent);
     }
 
-    public class map_OnClickLisetener implements View.OnClickListener {
+    public class map_OnClickListener implements View.OnClickListener {
         public void onClick(View view){
             OpenMapActivity();
         }
@@ -43,7 +45,16 @@ public class HomeFragment extends Fragment {
         startActivity(intent);
     }
 
-
+    public class hc_OnClickListener implements View.OnClickListener {
+        public void onClick(View view){
+            OpenHCActivity();
+        }
+    }
+    public void OpenHCActivity(){
+//        Intent intent = new Intent(HomeFragment.this.getActivity(),SOSActivity.class);
+        Intent intent = new Intent(HomeFragment.this.getActivity(), HospitalChoosing.class);
+        startActivity(intent);
+    }
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -62,7 +73,9 @@ public class HomeFragment extends Fragment {
         sos_button = (ImageButton) root.findViewById(R.id.imageButton2);
         sos_button.setOnClickListener(new sos_OnClickListener());
         map_button = (ImageButton) root.findViewById(R.id.imageButton3);
-        map_button.setOnClickListener(new map_OnClickLisetener());
+        map_button.setOnClickListener(new map_OnClickListener());
+        hc_button = (ImageButton) root.findViewById(R.id.imageButton4);
+        hc_button.setOnClickListener(new hc_OnClickListener());
         return root;
     }
 }
