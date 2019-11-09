@@ -8,12 +8,24 @@ import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
 
     private GoogleMap mMap;
+
+    private void moveMap(LatLng place){
+        CameraPosition cameraPosition = new CameraPosition.Builder().target(place).zoom(17).build();
+
+        mMap.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
+    }
+
+    private void setUpMap(){
+        LatLng place = new LatLng(22.336191, 114.263601);//move to HKUST
+        moveMap(place);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,42 +52,9 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         mMap = googleMap;
 
         // Add a marker in Sydney and move the camera
-        LatLng tko_hospital = new LatLng(22.318339, 114.269767);
-        mMap.addMarker(new MarkerOptions().position(tko_hospital).title("Tseung Kwan O Hospital"));
-        LatLng alice = new LatLng(22.458743, 114.174861);
-        mMap.addMarker(new MarkerOptions().position(alice).title("Alice Ho Miu Ling Nethersole Hospital"));
-        LatLng alice = new LatLng(22.341483, 114.153187);
-        mMap.addMarker(new MarkerOptions().position(alice).title("Caritas Medical Centre"));
-        LatLng alice = new LatLng(22.315187, 114.172416);
-        mMap.addMarker(new MarkerOptions().position(alice).title("Kwong Wah Hospital"));
-        LatLng alice = new LatLng(22.458743, 114.174861);
-        mMap.addMarker(new MarkerOptions().position(alice).title("North District Hospital"));
-        LatLng alice = new LatLng(22.458743, 114.174861);
-        mMap.addMarker(new MarkerOptions().position(alice).title("North Lantau Hospital"));
-        LatLng alice = new LatLng(22.458743, 114.174861);
-        mMap.addMarker(new MarkerOptions().position(alice).title("Princess Margaret Hospital"));
-        LatLng alice = new LatLng(22.458743, 114.174861);
-        mMap.addMarker(new MarkerOptions().position(alice).title("Pok Oi Hospital"));
-        LatLng alice = new LatLng(22.458743, 114.174861);
-        mMap.addMarker(new MarkerOptions().position(alice).title("Prince of Wales Hospital"));
-        LatLng alice = new LatLng(22.458743, 114.174861);
-        mMap.addMarker(new MarkerOptions().position(alice).title("Pamela Youde Nethersole Eastern Hospital"));
-        LatLng alice = new LatLng(22.458743, 114.174861);
-        mMap.addMarker(new MarkerOptions().position(alice).title("Queen Elizabeth Hospital"));
-        LatLng alice = new LatLng(22.458743, 114.174861);
-        mMap.addMarker(new MarkerOptions().position(alice).title("Queen Mary Hospital"));
-        LatLng alice = new LatLng(22.458743, 114.174861);
-        mMap.addMarker(new MarkerOptions().position(alice).title("Ruttonjee Hospital"));
-        LatLng alice = new LatLng(22.458743, 114.174861);
-        mMap.addMarker(new MarkerOptions().position(alice).title("St John Hospital"));
-        LatLng alice = new LatLng(22.458743, 114.174861);
-        mMap.addMarker(new MarkerOptions().position(alice).title("Tuen Mun Hospital"));
-        LatLng alice = new LatLng(22.458743, 114.174861);
-        mMap.addMarker(new MarkerOptions().position(alice).title("Tin Shui Wai Hospital"));
-        LatLng alice = new LatLng(22.458743, 114.174861);
-        mMap.addMarker(new MarkerOptions().position(alice).title("United Christian Hospital"));
-        LatLng alice = new LatLng(22.458743, 114.174861);
-        mMap.addMarker(new MarkerOptions().position(alice).title("Yan Chai Hospital"));
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(tko_hospital));
+//        LatLng sydney = new LatLng(-34, 151);
+//        mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
+//        mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
+        setUpMap();
     }
 }
