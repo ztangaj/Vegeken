@@ -30,8 +30,8 @@ public class SOSActivity extends AppCompatActivity {
         ActionBar ab = getSupportActionBar();
 
         ab.setDisplayHomeAsUpEnabled(true);
-        Intent intent = getIntent();
-        FloatingActionButton fab = findViewById(R.id.fab);
+//        Intent intent = getIntent();
+//        FloatingActionButton fab = findViewById(R.id.fab);
 
     }
 
