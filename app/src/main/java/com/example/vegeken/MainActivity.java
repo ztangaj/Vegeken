@@ -74,8 +74,4 @@ public class MainActivity extends AppCompatActivity {
                 || super.onSupportNavigateUp();
     }
 
-    public void openSOS(View view){
-        Intent intent = new Intent(this, SOSActivity.class);
-        startActivity(intent);
-    }
 }
