@@ -1,6 +1,5 @@
 package com.example.vegeken;
 
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 
@@ -73,5 +72,10 @@ public class MainActivity extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         return NavigationUI.navigateUp(navController, mAppBarConfiguration)
                 || super.onSupportNavigateUp();
+    }
+
+    public void openSOS(View view){
+        Intent intent = new Intent(this, SOSActivity.class);
+        startActivity(intent);
     }
 }
