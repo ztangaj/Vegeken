@@ -25,8 +25,7 @@ public class FakeTipActivity extends AppCompatActivity {
     }
 
     public void back(View view){
-        Intent intent = new Intent(this, SOSActivity.class);
-        startActivity(intent);
+        this.finish();
     }
 
 }
