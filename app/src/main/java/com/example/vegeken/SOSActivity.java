@@ -5,14 +5,11 @@ import android.annotation.TargetApi;
 import android.content.Context;
 import android.content.Intent;
 
-import android.graphics.SurfaceTexture;
-import android.hardware.Camera;
 import android.hardware.camera2.CameraManager;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
@@ -48,14 +45,22 @@ public class SOSActivity extends AppCompatActivity {
     private CameraManager cameraManager;
     private String cameraId;
 
+    private MediaPlayer mp;
+
     @TargetApi(23)
     public void startOrStopAlarm(View view){
+
         if(alarmFlag==0){
             try {
                 cameraManager = (CameraManager)getSystemService(Context.CAMERA_SERVICE);
                 cameraId = cameraManager.getCameraIdList()[0];
                 cameraManager.setTorchMode(cameraId, true);
                 alarmFlag = 1;
+                mp = MediaPlayer.create(this, R.raw.alarm);
+                if(!mp.isPlaying()){
+                    mp.start();
+                    mp.setLooping(true);
+                }
             } catch (Exception e){}
         }
         else{
@@ -64,6 +69,8 @@ public class SOSActivity extends AppCompatActivity {
                 cameraId = cameraManager.getCameraIdList()[0];
                 cameraManager.setTorchMode(cameraId, false);
                 alarmFlag = 0;
+                mp.reset();
+                mp.release();
             } catch (Exception e){}
         }
     }
