@@ -18,16 +18,8 @@
             android:name=".SOSActivity"
             android:parentActivityName=".MainActivity"
             android:label="@string/title_activity_sos"
-<<<<<<< HEAD
-            android:parentActivityName=".MainActivity"
             android:theme="@style/AppTheme.NoActionBar" />
-=======
-            android:theme="@style/AppTheme.NoActionBar">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity" />
-        </activity>
->>>>>>> 7d298fc1bc86c2471d8df1e28b187f5f85e6f892
+
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name"
