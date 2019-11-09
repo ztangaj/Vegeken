@@ -11,6 +11,7 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProviders;
 
 import com.example.vegeken.HospitalChoosing;
+import com.example.vegeken.Info;
 import com.example.vegeken.MapsActivity;
 import com.example.vegeken.R;
 import com.example.vegeken.SOSActivity;
@@ -23,6 +24,7 @@ public class HomeFragment extends Fragment {
     private ImageButton sos_button = null;
     private ImageButton map_button = null;
     private ImageButton hc_button = null;
+    private ImageButton info_button = null;
 
     public class sos_OnClickListener implements View.OnClickListener {
         public void onClick(View view){
@@ -56,6 +58,17 @@ public class HomeFragment extends Fragment {
         startActivity(intent);
     }
 
+    public class info_OnClickListener implements View.OnClickListener {
+        public void onClick(View view){
+            OpenInfoActivity();
+        }
+    }
+    public void OpenInfoActivity(){
+//        Intent intent = new Intent(HomeFragment.this.getActivity(),SOSActivity.class);
+        Intent intent = new Intent(HomeFragment.this.getActivity(), Info.class);
+        startActivity(intent);
+    }
+
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         homeViewModel =
@@ -76,6 +89,8 @@ public class HomeFragment extends Fragment {
         map_button.setOnClickListener(new map_OnClickListener());
         hc_button = (ImageButton) root.findViewById(R.id.imageButton4);
         hc_button.setOnClickListener(new hc_OnClickListener());
+        info_button = (ImageButton) root.findViewById(R.id.imageButton);
+        info_button.setOnClickListener(new info_OnClickListener());
         return root;
     }
 }
