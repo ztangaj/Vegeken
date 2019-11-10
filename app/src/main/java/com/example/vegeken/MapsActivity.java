@@ -45,16 +45,16 @@ public class MapsActivity extends FragmentActivity implements
     private static final int Request_User_Location_Code = 99;
 
 
-    private void moveMap(LatLng place){
-        CameraPosition cameraPosition = new CameraPosition.Builder().target(place).zoom(17).build();
-
-        mMap.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
-    }
-
-    private void setUpMap(){
-        LatLng place = new LatLng(22.336191, 114.263601);//move to HKUST
-        moveMap(place);
-    }
+//    private void moveMap(LatLng place){
+//        CameraPosition cameraPosition = new CameraPosition.Builder().target(place).zoom(17).build();
+//
+//        mMap.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
+//    }
+//
+//    private void setUpMap(){
+//        LatLng place = new LatLng(22.336191, 114.263601);//move to HKUST
+//        moveMap(place);
+//    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -154,7 +154,7 @@ public class MapsActivity extends FragmentActivity implements
         MarkerOptions markerOptions = new MarkerOptions();
         markerOptions.position(latLng);
         markerOptions.title("user Current Location");
-        markerOptions.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN));
+        markerOptions.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE));
 
         currentUserLocationMarker = mMap.addMarker((markerOptions));
 
@@ -180,44 +180,48 @@ public class MapsActivity extends FragmentActivity implements
 
 
         // Add a marker in Sydney and move the camera
-
         LatLng tko_hospital = new LatLng(22.318339, 114.269767);
-        mMap.addMarker(new MarkerOptions().position(tko_hospital).title("Tseung Kwan O Hospital"));
+        mMap.addMarker(new MarkerOptions().position(tko_hospital).title("Tseung Kwan O Hospital").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_ORANGE)));
         LatLng alice = new LatLng(22.458743, 114.174861);
-        mMap.addMarker(new MarkerOptions().position(alice).title("Alice Ho Miu Ling Nethersole Hospital"));
+        mMap.addMarker(new MarkerOptions().position(alice).title("Alice Ho Miu Ling Nethersole Hospital").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN)));
         LatLng caritas = new LatLng(22.341483, 114.153187);
-        mMap.addMarker(new MarkerOptions().position(caritas).title("Caritas Medical Centre"));
+        mMap.addMarker(new MarkerOptions().position(caritas).title("Caritas Medical Centre").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN)));
         LatLng kw = new LatLng(22.315187, 114.172416);
-        mMap.addMarker(new MarkerOptions().position(kw).title("Kwong Wah Hospital"));
+        mMap.addMarker(new MarkerOptions().position(kw).title("Kwong Wah Hospital").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED)));
         LatLng nd = new LatLng(22.496748, 114.124646);
-        mMap.addMarker(new MarkerOptions().position(nd).title("North District Hospital"));
+        mMap.addMarker(new MarkerOptions().position(nd).title("North District Hospital").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN)));
         LatLng nl = new LatLng(22.282041, 113.939272);
-        mMap.addMarker(new MarkerOptions().position(nl).title("North Lantau Hospital"));
+        mMap.addMarker(new MarkerOptions().position(nl).title("North Lantau Hospital").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN)));
         LatLng margaret = new LatLng(22.340958, 114.134718);
-        mMap.addMarker(new MarkerOptions().position(margaret).title("Princess Margaret Hospital"));
+        mMap.addMarker(new MarkerOptions().position(margaret).title("Princess Margaret Hospital").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_ORANGE)));
         LatLng po = new LatLng(22.445426, 114.041905);
-        mMap.addMarker(new MarkerOptions().position(po).title("Pok Oi Hospital"));
+        mMap.addMarker(new MarkerOptions().position(po).title("Pok Oi Hospital").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED)));
         LatLng wales = new LatLng(22.379964, 114.201887);
-        mMap.addMarker(new MarkerOptions().position(wales).title("Prince of Wales Hospital"));
+        mMap.addMarker(new MarkerOptions().position(wales).title("Prince of Wales Hospital").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED)));
         LatLng pyn = new LatLng(22.269609, 114.236259);
-        mMap.addMarker(new MarkerOptions().position(pyn).title("Pamela Youde Nethersole Eastern Hospital"));
+        mMap.addMarker(new MarkerOptions().position(pyn).title("Pamela Youde Nethersole Eastern Hospital").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_ORANGE)));
         LatLng elizabeth = new LatLng(22.308906, 114.174628);
-        mMap.addMarker(new MarkerOptions().position(elizabeth).title("Queen Elizabeth Hospital"));
+        mMap.addMarker(new MarkerOptions().position(elizabeth).title("Queen Elizabeth Hospital").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN)));
         LatLng mary = new LatLng(22.270269, 114.131377);
-        mMap.addMarker(new MarkerOptions().position(mary).title("Queen Mary Hospital"));
+        mMap.addMarker(new MarkerOptions().position(mary).title("Queen Mary Hospital").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_ORANGE)));
         LatLng ruttonjee = new LatLng(22.275825, 114.175333);
-        mMap.addMarker(new MarkerOptions().position(ruttonjee).title("Ruttonjee Hospital"));
+        mMap.addMarker(new MarkerOptions().position(ruttonjee).title("Ruttonjee Hospital").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_ORANGE)));
         LatLng john = new LatLng(22.208057, 114.031518);
-        mMap.addMarker(new MarkerOptions().position(john).title("St John Hospital"));
+        mMap.addMarker(new MarkerOptions().position(john).title("St John Hospital").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN)));
         LatLng tm = new LatLng(22.408245, 113.975859);
-        mMap.addMarker(new MarkerOptions().position(tm).title("Tuen Mun Hospital"));
+        mMap.addMarker(new MarkerOptions().position(tm).title("Tuen Mun Hospital").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_ORANGE)));
         LatLng tsw = new LatLng(22.458482, 113.995833);
-        mMap.addMarker(new MarkerOptions().position(tsw).title("Tin Shui Wai Hospital"));
+        mMap.addMarker(new MarkerOptions().position(tsw).title("Tin Shui Wai Hospital").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_ORANGE)));
         LatLng uc = new LatLng(22.323373, 114.227027);
-        mMap.addMarker(new MarkerOptions().position(uc).title("United Christian Hospital"));
+        mMap.addMarker(new MarkerOptions().position(uc).title("United Christian Hospital").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_ORANGE)));
         LatLng yc = new LatLng(22.369718, 114.119595);
-        mMap.addMarker(new MarkerOptions().position(yc).title("Yan Chai Hospital"));
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(tko_hospital));
+        mMap.addMarker(new MarkerOptions().position(yc).title("Yan Chai Hospital").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN)));
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(alice));
+
+//        LatLng lastLat = new LatLng(lastLocation.getLatitude(),lastLocation.getLongitude());
+//        mMap.moveCamera(CameraUpdateFactory.newLatLng(lastLat));
+//        mMap.animateCamera(CameraUpdateFactory.zoomBy(12));
+
 
 //        LatLng sydney = new LatLng(-34, 151);
 //        mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
