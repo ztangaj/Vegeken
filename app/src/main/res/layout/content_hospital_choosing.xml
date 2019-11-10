@@ -121,13 +121,15 @@
                     android:gravity="center"
                     />
             </LinearLayout>
+
             <Button
                 android:id="@+id/bt2"
                 android:layout_width="0dp"
-                android:layout_weight="1"
                 android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:onClick="goToGoogleMap"
                 android:text="Google Map Navigation"
-                android:textSize="12dp"/>
+                android:textSize="12dp" />
 
         </LinearLayout>
         <LinearLayout
